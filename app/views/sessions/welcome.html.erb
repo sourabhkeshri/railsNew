@@ -1,0 +1,11 @@
+<h1>Sessions#welcome</h1>
+<h1>Welcome</h1>
+<% if logged_in? %><hr>
+    <h1>You are Logged In, <%= current_user.username %></h1> <h1>Congratulations!!</h1><br><hr>
+    <%= link_to 'create articles', '/articles/new' %>
+    
+<%end%>
+<% if !logged_in? %>
+<%= button_to "Login", '/login', method: :get%><br>
+<%= button_to "Sign Up", '/users/new', method: :get%>
+<% end %>
